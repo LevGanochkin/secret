@@ -1,10 +1,12 @@
-name: Deploy to GitHub Pages
+name: Build and deploy to GitHub Pages
 
+# запускаем при пуше в main (сменить на твою ветку, если не main)
 on:
   push:
     branches:
       - main
 
+# минимальные права, чтобы деплоить Pages
 permissions:
   contents: read
   pages: write
@@ -20,15 +22,23 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: "20"
 
-      - name: Install
+      - name: Install dependencies
         run: npm ci
 
       - name: Build
         run: npm run build
 
-      - name: Upload artifact
+      - name: Inspect build output (debug)
+        run: |
+          echo "=== dist tree ==="
+          ls -la
+          ls -la dist || true
+          find dist -maxdepth 2 -type f -print || true
+
+      - name: Upload Pages artifact
+        # официальная action для Pages-артифакта (актуальная на 2024–2025)
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
@@ -36,11 +46,10 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy-to-pages.outputs.page_url }}
-
+    # обязательно дать разрешение для деплоя (иногда нужно именно здесь)
+    permissions:
+      pages: write
     steps:
-      - name: Deploy
-        id: deploy-to-pages
+      - name: Deploy to GitHub Pages
+        id: deploy
         uses: actions/deploy-pages@v4
