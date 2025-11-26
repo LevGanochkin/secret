@@ -1,0 +1,110 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.flex-col,
+.flex-row {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.bg {
+  background-image: url("./assets/images/map.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 32.5rem;
+  height: 48.75rem;
+}
+
+.text-up,
+.text-down {
+  position: relative;
+}
+
+.text-up {
+  max-width: 280px;
+  top: 11.1rem;
+}
+
+.text-down {
+  max-width: 160px;
+  top: 19.5rem;
+  left: -0.5rem;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.btn-auth,
+.btn-submit,
+.btn-hint {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transition: transform 0.25s ease;
+
+  & > span {
+    transition: color 0.25s;
+  }
+}
+
+.btn-auth:hover,
+.btn-submit:hover {
+  transform: scale(1.05);
+}
+
+.btn-auth:hover > span {
+  color: #d6c5ab;
+}
+
+.hidden {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
+
+.stage {
+  height: 100%;
+  gap: 4rem;
+}
+
+/* .btn-submit {
+  width: 150px;
+} */
+
+.btn-submit:hover > span {
+  color: #9c0606;
+}
+
+.max {
+  max-width: 800px;
+}
+
+.btn-hint {
+  position: absolute;
+  bottom: -10rem;
+  left: -10rem;
+  padding: 3rem;
+
+  & > span {
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+}
+
+.btn-hint:hover > span {
+  opacity: 1;
+}

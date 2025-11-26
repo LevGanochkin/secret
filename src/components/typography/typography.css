@@ -1,0 +1,43 @@
+.marauder-text {
+  font-family: "Marauder";
+}
+.letter-text {
+  font-family: "Letter";
+}
+
+.h1 {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.h2 {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.p2 {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.ruby {
+  color: #581111;
+}
+
+.white {
+  color: #ebd199;
+}
+
+.lh-low {
+  line-height: 0.5;
+}
+
+.auth-title {
+  font-size: 2.5rem;
+  line-height: 0.6;
+}
+
+.lh-high {
+  font-size: 2rem;
+  line-height: 2;
+}

@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Marauder";
+  src: url("./marauder.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Letter";
+  src: url("./Letter.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
